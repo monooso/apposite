@@ -7,10 +7,10 @@ use Illuminate\Contracts\Validation\Rule;
 class ApplyUnless extends ApplyWhen implements Rule
 {
     /**
-     * ApplyUnless constructor.
+     * Initialise the custom rule
      *
-     * @param  bool|callable  $conditional
-     * @param  array|string   $rules
+     * @param bool|callable $conditional
+     * @param array|string  $rules
      */
     public function __construct($conditional, $rules)
     {

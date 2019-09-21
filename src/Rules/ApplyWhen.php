@@ -17,10 +17,10 @@ class ApplyWhen implements Rule
     protected $rules;
 
     /**
-     * ApplyWhen constructor.
+     * Initialise the custom rule
      *
-     * @param  bool|callable  $conditional
-     * @param  array|string   $rules
+     * @param bool|callable $conditional
+     * @param array|string  $rules
      */
     public function __construct($conditional, $rules)
     {
@@ -32,8 +32,8 @@ class ApplyWhen implements Rule
     /**
      * Determine if the validation rule passes
      *
-     * @param  string  $attribute
-     * @param  mixed   $value
+     * @param string $attribute
+     * @param mixed  $value
      *
      * @return bool
      */
