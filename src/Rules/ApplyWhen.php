@@ -13,7 +13,7 @@ class ApplyWhen implements Rule
     /** @var array */
     protected $messages;
 
-    /** @var array */
+    /** @var array|string */
     protected $rules;
 
     /**
