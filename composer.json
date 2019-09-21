@@ -1,11 +1,13 @@
 {
     "name": "monooso/apposite",
+    "type": "library",
     "description": "Conditionally apply validation rules in Laravel",
+    "homepage": "https://github.com/monooso/apposite",
+    "license": "MIT",
     "keywords": [
         "laravel",
         "validation"
     ],
-    "license": "MIT",
     "support": {
         "issues": "https://github.com/monooso/apposite/issues",
         "source": "https://github.com/monooso/apposite"
