@@ -1,7 +1,7 @@
 # Apposite
 
 <p>
-  <a href="https://travis-ci.org/monooso/apposite"><img src="https://img.shields.io/travis/monooso/apposite/stable.svg" alt="Build Status"/></a>
+  <a href="https://travis-ci.org/monooso/apposite"><img src="https://img.shields.io/travis/monooso/apposite/master.svg" alt="Build Status"/></a>
   <a href="https://scrutinizer-ci.com/g/monooso/apposite"><img src="https://img.shields.io/scrutinizer/g/monooso/apposite.svg" alt="Quality Score"/></a>
   <a href="https://scrutinizer-ci.com/g/monooso/apposite"><img src="https://img.shields.io/scrutinizer/coverage/g/monooso/apposite.svg" alt="Coverage"/></a>
   <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/v/stable.svg" alt="Latest Stable Version"></a>
