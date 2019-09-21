@@ -11,10 +11,17 @@ build:
   environment:
     php:
       version: '7.2'
-  tests:
-    override:
-      -
-        command: 'vendor/bin/phpunit --coverage-clover=coverage.clover'
-        coverage:
-          file: 'coverage.clover'
-          format: 'clover'
+
+  nodes:
+    analysis:
+      tests:
+        override:
+          - php-scrutinizer-run
+
+    tests-and-coverage:
+      tests:
+        override:
+          - command: 'vendor/bin/phpunit --coverage-clover=coverage.clover'
+            coverage:
+              file: 'coverage.clover'
+              format: 'clover'
