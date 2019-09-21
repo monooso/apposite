@@ -4,7 +4,7 @@ namespace Monooso\Apposite\Tests\Feature\Rules;
 
 use Illuminate\Support\Facades\Validator;
 use Monooso\Apposite\Rules\ApplyUnless;
-use Tests\TestCase;
+use Orchestra\Testbench\TestCase;
 
 class ApplyUnlessTest extends TestCase
 {
