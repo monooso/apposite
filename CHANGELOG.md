@@ -3,6 +3,10 @@ This project adheres to [Semantic Versioning](https://semver.org). All notable c
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-09-28
+### Changed
+- Refactored `ApplyWhen` and `ApplyUnless` to be syntactic sugar for `ApplyMap`
+
 ## [1.1.0] - 2019-09-28
 ### Added
 - Added `ApplyMap` custom validation rule
