@@ -4,15 +4,20 @@ namespace Monooso\Apposite\Rules;
 
 use Illuminate\Contracts\Validation\Rule;
 
-class ApplyUnless extends Apply implements Rule
+class ApplyUnless extends ApplyMap implements Rule
 {
     /**
-     * @inheritDoc
+     * Initialise the custom rule
+     *
+     * @param bool|callable $conditional
+     * @param array|string  $rules
      */
     public function __construct($conditional, $rules)
     {
-        parent::__construct($conditional, $rules);
+        $key = 'unless';
 
-        $this->shouldApply = ! $this->shouldApply;
+        (bool)(is_callable($conditional) ? $conditional() : $conditional)
+            ? parent::__construct($key, [])
+            : parent::__construct($key, [$key => $rules]);
     }
 }
