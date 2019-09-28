@@ -9,7 +9,7 @@
 </p>
 
 ## About Apposite
-Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/6.x/validation#conditionally-adding-rules). For example, you may wish to validate the `email` field only if the `contact_method` field is "email".
+Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/6.x/validation#conditionally-adding-rules).
 
 ## Requirements and installation
 Apposite requires PHP 7.2, and has been tested against Laravel 6. It _should_ work just fine with any recent version from the 5.x branch, but it hasn't been tested in that environment.
@@ -21,31 +21,93 @@ composer require monooso/apposite
 ```
 
 ## Usage
-Apposite provides two [custom Laravel validation rules](https://laravel.com/docs/6.x/validation#using-rule-objects), `ApplyWhen` and `ApplyUnless`.
+Apposite provides three [custom Laravel validation rules](https://laravel.com/docs/6.x/validation#using-rule-objects):
+
+- [`ApplyWhen`](#apply-when)
+- [`ApplyUnless`](#apply-unless)
+- [`ApplyMap`](#apply-map)
+
+### `ApplyWhen` <a name="apply-when"></a>
+Use `ApplyWhen` to apply one or more validation rules when a condition is met. For example, validate the `email` field if the `contact_method` is "email".
+
+The `ApplyWhen` constructor expects two arguments:
+
+- A conditional, which determines whether the validation rules are applied. This may be a boolean value, or a closure which returns a boolean.
+- The validation rules to apply if the conditional evaluates to `true`. The may be in [any format](https://laravel.com/docs/6.x/validation#quick-writing-the-validation-logic) recognised by the Laravel validator.
+
+For example:
+
+```php
+new ApplyWhen($foo === $bar, 'required|string|min:10');
+
+new ApplyWhen(function () {
+    return random_int(1, 10) % 2 === 0;
+}, ['required', 'string', 'min:10']);
+```
+
+Add the `ApplyWhen` rule to your validation rules array in the normal way.
 
 ```php
 public function store(Request $request)
 {
     $rules = [
         'contact_method' => ['required', 'in:email,phone'],
-        'email' => [
-            new ApplyWhen(function () use ($request) {
-                return $request->get('contact_method') === 'email';
-            }, ['required', 'email', 'max:255']),
-        ],
-        'phone' => [
-            new ApplyUnless(
-                ($request->get('contact_method') === 'email'),
-                'required'
-            ),
+        'email'          => [
+            new ApplyWhen($request->contact_method === 'email', ['required', 'email', 'max:255']),
         ],
     ];
+
+    $validated = $this->validate($rules);
 }
 ```
 
-Both rules expect a conditional, and the rules to apply if the conditional evaluates to `true`.
+### `ApplyUnless` <a name="apply-unless"></a>
+`ApplyUnless` is the opposite of `ApplyWhen`. Use it to apply one or more validation rules when a condition _is not_ met.
 
-The rules may be in [any format](https://laravel.com/docs/6.x/validation#quick-writing-the-validation-logic) recognised by the Laravel validator. The conditional may be a boolean value, or a closure which returns a boolean.
+For example:
+
+```php
+public function store(Request $request)
+{
+    $rules = [
+        'contact_method' => ['required', 'in:email,phone'],
+        'email'          => [
+            new ApplyUnless($request->contact_method === 'phone', ['required', 'email', 'max:255']),
+        ],
+    ];
+
+    $validated = $this->validate($rules);
+}
+```
+
+Refer to the [`ApplyWhen`](#apply-when) documentation for full usage instructions.
+
+### `ApplyMap` <a name="apply-map"></a>
+Use `ApplyMap` when you need to choose between different sets of validation rules. For example, when validating that the chosen `delivery_service` is offered by the chosen `delivery_provider`.
+
+```php
+public function store(Request $request)
+{
+    $rules = [
+        'delivery_provider' => ['required', 'in:fedex,ups,usps'],
+        'delivery_service'  => [
+            'required',
+            new ApplyMap($request->delivery_provider, [
+                'fedex' => 'in:one_day,two_day',
+                'ups'   => 'in:overnight,standard',
+                'usps'  => 'in:two_day,someday',
+            ]),
+        ],
+    ]; 
+
+    $validated = $this->validate($rules);
+}
+```
+
+The `ApplyMap` constructor expects two arguments:
+
+- The "key" value, which determines which rules to apply (if any). For example, "fedex".
+- A "map" of keys to validation rules. The validation rules may be in any format recognised by the Laravel validator.
 
 ## License
 Apposite is open source software, released under [the MIT license](https://github.com/monooso/apposite/blob/stable/LICENSE.txt).
