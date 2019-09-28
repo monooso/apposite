@@ -1,8 +1,13 @@
 # Changelog
-All notable changes to this project will be documented in this file.
+This project adheres to [Semantic Versioning](https://semver.org). All notable changes are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com).
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+## [Unreleased]
+
+## [1.1.0] - 2019-09-28
+### Added
+- Added `ApplyMap` custom validation rule
 
 ## [1.0.0] - 2019-09-21
 ### Added
-- Initial release
+- Added `ApplyWhen` custom validation rule
+- Added `ApplyUnless` custom validation rule
