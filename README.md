@@ -12,7 +12,12 @@
 Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/6.x/validation#conditionally-adding-rules).
 
 ## Requirements and installation
-Apposite requires PHP 7.2, and has been tested against Laravel 6. It _should_ work just fine with any recent version from the 5.x branch, but it hasn't been tested in that environment.
+Select the appropriate branch for your version of Laravel.
+
+| Branch | Laravel Versions | PHP Version |
+|:-------|:-----------------|:------------|
+| 1.x    | `^6.0`           | `^7.2`      |
+| 2.x    | `^7.0`           | `^7.2.5`    |
 
 Install Apposite using [Composer](https://getcomposer.org/):
 
