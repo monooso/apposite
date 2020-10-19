@@ -9,7 +9,7 @@
 </p>
 
 ## About Apposite
-Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/6.x/validation#conditionally-adding-rules).
+Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/validation#conditionally-adding-rules).
 
 ## Requirements and installation
 Select the appropriate branch for your version of Laravel.
@@ -18,6 +18,7 @@ Select the appropriate branch for your version of Laravel.
 |:-------|:-----------------|:------------|
 | 1.x    | `^6.0`           | `^7.2`      |
 | 2.x    | `^7.0`           | `^7.2.5`    |
+| 3.x    | `^8.0`           | `^7.3`      |
 
 Install Apposite using [Composer](https://getcomposer.org/):
 
