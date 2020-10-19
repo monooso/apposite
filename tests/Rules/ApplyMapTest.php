@@ -1,6 +1,6 @@
 <?php
 
-namespace Monooso\Apposite\Tests\Feature\Rules;
+namespace Monooso\Apposite\Tests\Rules;
 
 use Illuminate\Support\Facades\Validator;
 use Monooso\Apposite\Rules\ApplyMap;
