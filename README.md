@@ -31,6 +31,7 @@ Apposite provides three [custom Laravel validation rules](https://laravel.com/do
 
 - [`ApplyWhen`](#apply-when)
 - [`ApplyUnless`](#apply-unless)
+- [`ApplyAtLeastOne`](#apply-at-least-one)
 - [`ApplyMap`](#apply-map)
 
 ### `ApplyWhen` <a name="apply-when"></a>
@@ -87,6 +88,43 @@ public function store(Request $request)
 ```
 
 Refer to the [`ApplyWhen`](#apply-when) documentation for full usage instructions.
+
+
+### `ApplyAtLeastOne` <a name="apply-at-least-one"></a>
+Use `ApplyAtLeastOne` to apply one of validation rules when a condition is met. For example, validate the `phone_number` field if the `contact_method` is "phone".
+
+The `ApplyAtLeastOne` constructor expects three arguments:
+
+- A conditional, which determines whether the validation rules are applied. This may be a boolean value, or a closure which returns a boolean.
+- The validation rules to apply if the conditional evaluates to `true`. The may be in [any format](https://laravel.com/docs/validation#quick-writing-the-validation-logic) recognised by the Laravel validator.
+- Error message if no rule applied.
+
+For example:
+
+```php
+new ApplyAtLeastOne($foo === $bar, 'min:10|regex:[0-9]{10}');
+
+new ApplyAtLeastOne(function () {
+    return random_int(1, 10) % 2 === 0;
+}, ['string', 'min:10']);
+```
+
+Add the `ApplyAtLeastOne` rule to your validation rules array in the normal way.
+
+```php
+public function store(Request $request)
+{
+    $rules = [
+        'contact_method' => ['required', 'in:email,phone'],
+        'phone'          => [
+            new ApplyAtLeastOne($request->contact_method === 'phone', ['min:10', 'regex:[0-9]{10}']),
+        ],
+    ];
+
+    $validated = $this->validate($rules);
+}
+```
+Notice: don't use `required` rule inside `ApplyAtLeastOne`
 
 ### `ApplyMap` <a name="apply-map"></a>
 Use `ApplyMap` when you need to choose between different sets of validation rules. For example, when validating that the chosen `delivery_service` is offered by the chosen `delivery_provider`.
