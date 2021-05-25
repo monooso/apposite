@@ -19,6 +19,7 @@ Select the appropriate branch for your version of Laravel.
 | 1.x    | `^6.0`           | `^7.2`      |
 | 2.x    | `^7.0`           | `^7.2.5`    |
 | 3.x    | `^8.0`           | `^7.3`      |
+| 4.x    | `^8.0`           | `^8.0`      |
 
 Install Apposite using [Composer](https://getcomposer.org/):
 
@@ -27,7 +28,7 @@ composer require monooso/apposite
 ```
 
 ## Usage
-Apposite provides three [custom Laravel validation rules](https://laravel.com/docs/6.x/validation#using-rule-objects):
+Apposite provides three [custom Laravel validation rules](https://laravel.com/docs/8.x/validation#using-rule-objects):
 
 - [`ApplyWhen`](#apply-when)
 - [`ApplyUnless`](#apply-unless)
@@ -39,7 +40,7 @@ Use `ApplyWhen` to apply one or more validation rules when a condition is met. F
 The `ApplyWhen` constructor expects two arguments:
 
 - A conditional, which determines whether the validation rules are applied. This may be a boolean value, or a closure which returns a boolean.
-- The validation rules to apply if the conditional evaluates to `true`. The may be in [any format](https://laravel.com/docs/6.x/validation#quick-writing-the-validation-logic) recognised by the Laravel validator.
+- The validation rules to apply if the conditional evaluates to `true`. The may be in [any format](https://laravel.com/docs/8.x/validation#quick-writing-the-validation-logic) recognised by the Laravel validator.
 
 For example:
 
