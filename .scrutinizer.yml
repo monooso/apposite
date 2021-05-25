@@ -10,7 +10,7 @@ filter:
 build:
   environment:
     php:
-      version: '7.3'
+      version: "8.0"
 
   nodes:
     analysis:
@@ -21,7 +21,7 @@ build:
     tests-and-coverage:
       tests:
         override:
-          - command: 'vendor/bin/phpunit --coverage-clover=coverage.clover'
+          - command: "vendor/bin/phpunit --coverage-clover=coverage.clover"
             coverage:
-              file: 'coverage.clover'
-              format: 'clover'
+              file: "coverage.clover"
+              format: "clover"

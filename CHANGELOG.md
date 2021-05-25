@@ -1,9 +1,12 @@
 # Changelog
 This project adheres to [Semantic Versioning](https://semver.org). All notable changes are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com).
 
-## [3.1.0 - 2021-01-25](https://github.com/monooso/apposite/releases/tag/v3.1.0)
+## [4.0.0 - 2021-05-25](https://github.com/monooso/apposite/releases/tag/v4.0.0)
 ### Added
 - Support for PHP 8
+
+### Removed
+- Support for PHP 7.x
 
 ## [3.0.0 - 2020-10-19](https://github.com/monooso/apposite/releases/tag/v3.0.0)
 ### Added
