@@ -1,6 +1,10 @@
 # Changelog
 This project adheres to [Semantic Versioning](https://semver.org). All notable changes are documented in this file. The format is based on [Keep a Changelog](https://keepachangelog.com).
 
+## [Unreleased]
+### Changed
+- Switch from Travis CI to GitHub Actions for linting and testing
+
 ## [4.0.0 - 2021-05-25](https://github.com/monooso/apposite/releases/tag/v4.0.0)
 ### Added
 - Support for PHP 8

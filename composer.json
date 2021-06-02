@@ -45,5 +45,9 @@
         "psr-4": {
             "Monooso\\Apposite\\Tests\\": "tests/"
         }
+    },
+    "scripts": {
+        "lint": "phpcs src --standard=PSR2",
+        "test": "phpunit"
     }
 }
