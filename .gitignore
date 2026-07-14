@@ -2,9 +2,7 @@
 /vendor
 
 # Caches
-.php_cs.cache
 .phpunit.result.cache
 
 # Configuration
 .env
-.php_cs
