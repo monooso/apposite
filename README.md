@@ -12,15 +12,13 @@
 Apposite makes it easy to conditionally apply Laravel validation rules, even when you don't have access to [the validator instance](https://laravel.com/docs/validation#conditionally-adding-rules).
 
 ## Requirements and installation
-Apposite supports only the latest major version of [Laravel](https://laravel.com/); see [`composer.json`](composer.json) for the exact version requirements.
+Apposite supports only the latest major version of [Laravel](https://laravel.com/). See [`composer.json`](composer.json) for the exact version requirements.
 
 Install it using [Composer](https://getcomposer.org/):
 
 ```bash
 composer require monooso/apposite
 ```
-
-All development happens on `main`; releases are tagged.
 
 ## Usage
 Apposite provides three [custom Laravel validation rules](https://laravel.com/docs/validation#using-rule-objects):
