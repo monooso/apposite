@@ -1,5 +1,4 @@
 # Packages
-/node_modules
 /vendor
 
 # Caches
@@ -9,7 +8,3 @@
 # Configuration
 .env
 .php_cs
-
-# Logs
-npm-debug.log
-yarn-error.log
