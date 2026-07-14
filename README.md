@@ -2,8 +2,8 @@
 
 <p>
   <a href="https://github.com/monooso/apposite/actions/workflows/lint-and-test.yml"><img src="https://github.com/monooso/apposite/actions/workflows/lint-and-test.yml/badge.svg" alt="Lint and Test Status" /></a>
-  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/v/stable.svg" alt="Latest Stable Version" /></a>
-  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/license.svg" alt="License" /></a>
+  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://img.shields.io/packagist/v/monooso/apposite" alt="Latest Stable Version" /></a>
+  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://img.shields.io/packagist/l/monooso/apposite" alt="License" /></a>
 </p>
 
 ## About Apposite
