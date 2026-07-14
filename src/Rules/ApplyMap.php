@@ -16,9 +16,6 @@ class ApplyMap implements Rule
 
     /**
      * Initialise the custom rule
-     *
-     * @param string $key
-     * @param array  $map
      */
     public function __construct(string $key, array $map)
     {
@@ -29,9 +26,8 @@ class ApplyMap implements Rule
     /**
      * Determine if the validation rule passes
      *
-     * @param string $attribute
-     * @param mixed  $value
-     *
+     * @param  string  $attribute
+     * @param  mixed  $value
      * @return bool
      */
     public function passes($attribute, $value)
@@ -46,10 +42,7 @@ class ApplyMap implements Rule
     /**
      * Build the validator instance, to validate the given attribute and value
      *
-     * @param string $attribute
-     * @param mixed  $value
-     *
-     * @return ValidatorContract
+     * @param  mixed  $value
      */
     protected function makeValidator(string $attribute, $value): ValidatorContract
     {

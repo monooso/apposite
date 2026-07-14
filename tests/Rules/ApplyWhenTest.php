@@ -15,7 +15,7 @@ class ApplyWhenTest extends TestCase
 
         $rules = [
             'first_name' => 'required',
-            'last_name'  => new ApplyWhen(true, ['required', 'in:Evans,Jones,Williams']),
+            'last_name' => new ApplyWhen(true, ['required', 'in:Evans,Jones,Williams']),
         ];
 
         $validator = Validator::make($data, $rules);

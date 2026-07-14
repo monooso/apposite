@@ -14,8 +14,8 @@ class ApplyMapTest extends TestCase
         $data = ['delivery_service' => 'one_day'];
 
         $map = [
-            'fedex'      => 'required|in:one_day,two_day',
-            'ups'        => 'required|in:express,standard',
+            'fedex' => 'required|in:one_day,two_day',
+            'ups' => 'required|in:express,standard',
             'royal_mail' => 'required|in:two_day,someday',
         ];
 
