@@ -1,11 +1,9 @@
 # Apposite
 
 <p>
-  <img src="https://github.com/monooso/unobserve/actions/workflows/lint-and-test.yml/badge.svg" alt="Lint and Test Status"/></a>
-  <a href="https://scrutinizer-ci.com/g/monooso/apposite"><img src="https://img.shields.io/scrutinizer/g/monooso/apposite.svg" alt="Quality Score"/></a>
-  <a href="https://scrutinizer-ci.com/g/monooso/apposite"><img src="https://img.shields.io/scrutinizer/coverage/g/monooso/apposite.svg" alt="Coverage"/></a>
-  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/v/stable.svg" alt="Latest Stable Version"></a>
-  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/license.svg" alt="License"></a>
+  <a href="https://github.com/monooso/apposite/actions/workflows/lint-and-test.yml"><img src="https://github.com/monooso/apposite/actions/workflows/lint-and-test.yml/badge.svg" alt="Lint and Test Status" /></a>
+  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/v/stable.svg" alt="Latest Stable Version" /></a>
+  <a href="https://packagist.org/packages/monooso/apposite"><img src="https://poser.pugx.org/monooso/apposite/license.svg" alt="License" /></a>
 </p>
 
 ## About Apposite
