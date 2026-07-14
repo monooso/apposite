@@ -5,10 +5,11 @@ namespace Monooso\Apposite\Tests\Rules;
 use Illuminate\Support\Facades\Validator;
 use Monooso\Apposite\Rules\ApplyUnless;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ApplyUnlessTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_applies_optional_rules_when_the_condition_is_met()
     {
         $data = ['first_name' => 'Bryn', 'last_name' => 'Morgan'];
@@ -24,7 +25,7 @@ class ApplyUnlessTest extends TestCase
         $this->assertTrue($validator->errors()->has('last_name'));
     }
 
-    /** @test */
+    #[Test]
     public function it_ignores_optional_rules_when_the_condition_is_not_met()
     {
         $data = ['first_name' => 'Bryn', 'last_name' => 'Morgan'];

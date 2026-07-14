@@ -5,10 +5,11 @@ namespace Monooso\Apposite\Tests\Rules;
 use Illuminate\Support\Facades\Validator;
 use Monooso\Apposite\Rules\ApplyWhen;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ApplyWhenTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_applies_optional_rules_when_the_condition_is_met()
     {
         $data = ['first_name' => 'Bryn', 'last_name' => 'Morgan'];
@@ -24,7 +25,7 @@ class ApplyWhenTest extends TestCase
         $this->assertTrue($validator->errors()->has('last_name'));
     }
 
-    /** @test */
+    #[Test]
     public function it_ignores_optional_rules_when_the_condition_is_not_met()
     {
         $data = ['first_name' => 'Bryn', 'last_name' => 'Morgan'];
@@ -35,7 +36,7 @@ class ApplyWhenTest extends TestCase
         $this->assertTrue($validator->passes());
     }
 
-    /** @test */
+    #[Test]
     public function it_works_with_pipe_delimited_optional_rules()
     {
         $data = ['age' => 9.99];
@@ -47,7 +48,7 @@ class ApplyWhenTest extends TestCase
         $this->assertTrue($validator->errors()->has('age'));
     }
 
-    /** @test */
+    #[Test]
     public function it_works_with_a_callback_condition()
     {
         $data = ['first_name' => 'Bryn', 'last_name' => 'Morgan'];
@@ -64,7 +65,7 @@ class ApplyWhenTest extends TestCase
         $this->assertTrue($validator->errors()->has('last_name'));
     }
 
-    /** @test */
+    #[Test]
     public function it_returns_an_array_of_error_messages()
     {
         $data = ['age' => 5];
@@ -77,7 +78,7 @@ class ApplyWhenTest extends TestCase
         $this->assertArrayHasKey('age', $validator->errors()->messages());
 
         $this->assertSame(
-            ['The age must be less than 5.', 'The age must be greater than 5.'],
+            ['The age field must be less than 5.', 'The age field must be greater than 5.'],
             $validator->errors()->get('age')
         );
     }

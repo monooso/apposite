@@ -5,10 +5,11 @@ namespace Monooso\Apposite\Tests\Rules;
 use Illuminate\Support\Facades\Validator;
 use Monooso\Apposite\Rules\ApplyMap;
 use Orchestra\Testbench\TestCase;
+use PHPUnit\Framework\Attributes\Test;
 
 class ApplyMapTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function it_applies_the_correct_rules_from_the_map()
     {
         $data = ['delivery_service' => 'one_day'];
@@ -27,7 +28,7 @@ class ApplyMapTest extends TestCase
         $this->assertTrue($validator->errors()->has('delivery_service'));
     }
 
-    /** @test */
+    #[Test]
     public function it_does_not_apply_any_rules_if_the_map_key_does_not_exist()
     {
         $data = ['delivery_service' => 'one_day'];
